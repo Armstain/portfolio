@@ -80,22 +80,22 @@ const Navbar = () => {
             {/* Logo */}
             <div className='md:hidden lg:flex xl:w-1/3 xl:justify-center'>
                 <Link href='/' className='text-sm bg-black text-white rounded-md p-1 font-semibold flex items-center justify-center'>
-                    <span className='text-white mr-1'>Nazmul</span>
-                    <span className='w-14 h-8 rounded bg-white text-black flex items-center justify-center'>Hossain</span>
+                    <span className='text-white mr-1'>Web</span>
+                    <span className='w-10 h-8 rounded bg-white text-black flex items-center justify-center'>Dev</span>
                 </Link>
             </div>
             {/* Social */}
-            <div className='hidden md:flex gap-4 w-1/3'>
+            <div className='hidden md:flex gap-4 w-1/3  justify-end'>
                 <Link href='https://github.com/armstain'>
                     <Image src="/github.png" alt='GitHub' width={24} height={24} />
                 </Link>
-                <Link href='https://linkedin.com/armstain'>
+                <Link href='https://linkedin.com/nhadnan'>
                     <Image src="/linkedin.png" alt='LinkedIn' width={24} height={24} />
                 </Link>
                 <Link href='https://x.com/armstain'>
-                    <Image src="" alt='X' width={24} height={24} />
+                    <Image src="/x.png" alt='X' width={24} height={24} />
                 </Link>
-                <Link href='https://facebook.com/armstain'>
+                <Link href='https://facebook.com/'>
                     <Image src="/facebook.png" alt='Facebook' width={24} height={24} />
                 </Link>
             </div>

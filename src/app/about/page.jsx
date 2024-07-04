@@ -1,20 +1,49 @@
 "use client";
 import Brain from "@/components/brain";
 import { motion, useInView, useScroll } from "framer-motion";
-import Image from "next/image";
-import { useRef } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const AboutPage = () => {
+    const router = useRouter();
+    const [isAtBottom, setIsAtBottom] = useState(false);
     const containerRef = useRef();
 
     const { scrollYProgress } = useScroll({ container: containerRef });
 
-    const skillRef = useRef();
+    useEffect(() => {
+        const handleScroll = () => {
+            if (containerRef.current) {
+                const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
+                const isBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight - 10; // 10px threshold
+                setIsAtBottom(isBottom);
+            }
+        };
 
-    const isSkillRefInView = useInView(skillRef, { once: true }, { margin: "-100px" });
+        const container = containerRef.current;
+        container.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            container.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    useEffect(() => {
+        let timeoutId;
+        if (isAtBottom) {
+            timeoutId = setTimeout(() => {
+                router.push('/portfolio');
+            }, 1000); // 1 second delay before navigation
+        }
+        return () => clearTimeout(timeoutId);
+    }, [isAtBottom, router]);
+
+    const skillRef = useRef();
+    const isSkillRefInView = useInView(skillRef, { once: true, margin: "-100px" });
 
     const experienceRef = useRef();
-    const isExperienceRefInView = useInView(experienceRef, { once: true }, { margin: "-100px" });
+    const isExperienceRefInView = useInView(experienceRef, { once: true, margin: "-100px" });
+
 
     return (
         <motion.div
@@ -41,14 +70,11 @@ const AboutPage = () => {
                         <h1 className="font-bold text-2xl">About Me</h1>
                         {/* BIOGRAPHY DESC */}
                         <p className="text-lg">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                            harum quibusdam cupiditate nobis accusamus sed aut aperiam,
-                            reiciendis numquam! Voluptas voluptatibus obcaecati dolore itaque
-                            suscipit! Vel doloremque numquam quam nihil.
+                            Im Nazmul Hossain Adnan, a Passionate web developer with a strong background in creating dynamic and responsive web applications. Proficient in HTML, CSS, JavaScript, React, Node.js, MongoDB, and Tailwind, I thrive on bringing innovative ideas to life. My journey into web development has been driven by a love for technology and a commitment to continuous learning. When Im not coding, you can find me exploring new tools and techniques to enhance my skills.
                         </p>
                         {/* BIOGRAPHY QUOTE */}
                         <span className="italic">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Code is like humor. When you have to explain it, its bad.
                         </span>
                         {/* BIOGRAPHY SIGN SVG
                         <div className="self-end">
@@ -192,7 +218,7 @@ const AboutPage = () => {
                             transition={{ delay: 0.2 }}
                             className="font-bold text-2xl"
                         >
-                            EXPERIENCE
+                            EDUCATION
                         </motion.h1>
                         {/* EXPERIENCE LIST */}
                         <motion.div
@@ -259,9 +285,9 @@ const AboutPage = () => {
                                         2024
                                     </div> */}
                                     {/* JOB COMPANY */}
-                                    <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
+                                    {/* <div className="p-1 rounded bg-white text-sm font-semibold w-fit">
                                         Personal Project
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             {/* EXPERIENCE LIST ITEM */}
@@ -270,11 +296,11 @@ const AboutPage = () => {
                                 <div className="w-1/3 ">
                                     {/* JOB TITLE */}
                                     <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                        Portfolio Website
+                                        Art & Craft Store
                                     </div>
                                     {/* JOB DESC */}
                                     <div className="p-3 text-sm italic">
-                                        Developed a personal portfolio website to showcase projects and skills. Utilized React, Vite, and Tailwind CSS for development.
+                                        Created an Art & Craft store using React and Tailwind CSS. Focused on building a user-friendly interface and ensuring mobile responsiveness.
                                     </div>
                                     {/* JOB DATE */}
                                     {/* <div className="p-3 text-red-400 text-sm font-semibold">
@@ -298,10 +324,15 @@ const AboutPage = () => {
                             </div>
                         </motion.div>
                     </div>
+                    {isAtBottom && (
+                        <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white py-2 px-4 rounded-full">
+                            Navigating to Portfolio...
+                        </div>
+                    )}
 
                 </div>
                 {/* SVG CONTAINER */}
-                <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-3/2">
+                <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
                     <Brain scrollYProgress={scrollYProgress} />
                 </div>
             </div>
