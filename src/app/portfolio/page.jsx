@@ -23,9 +23,19 @@ const terms = [
 
 
 const items = [
+
     {
         id: 1,
         color: "from-red-300 to-blue-300",
+        title: "UrbanDrive",
+        desc: "UrbanDrive is an advanced car rental platform providing a seamless experience for users to browse, book, and manage rental cars. The project features a responsive, interactive frontend, secure backend, and various functionalities designed for ease of use across devices. This repository showcases both frontend and backend code to deliver a comprehensive car rental solution.. ",
+        img: "https://i.ibb.co.com/Rgbrj3v/Screenshot-2024-11-12-at-18-37-02-Urban-Drive.png"
+        ,
+        link: "https://cheery-bubblegum-eecb30.netlify.app/",
+    },
+    {
+        id: 2,
+        color: "from-blue-300 to-violet-300",
         title: "React Parcel Delivery",
         desc: "ExpressLane is a modern parcel delivery service web application, designed to provide seamless and efficient delivery management. Built with a robust tech stack, ExpressLane offers real-time parcel tracking, user authentication, and a comprehensive admin dashboard. ",
         img: "https://i.ibb.co/s9PFVwn/Screenshot-2024-07-04-at-17-22-45-Express-Lane.png"
@@ -33,26 +43,18 @@ const items = [
         link: "https://expreane-c2384.web.app/",
     },
     {
-        id: 2,
-        color: "from-blue-300 to-violet-300",
+        id: 3,
+        color: "from-violet-300 to-yellow-300",
         title: "Room Rent Service",
         desc: "Roomify is a user-friendly platform designed for renting rooms with ease. This project leverages modern web technologies to connect room seekers and landlords efficiently. ",
         img: "https://i.ibb.co/Dzkzxb4/Screenshot-2024-07-04-at-17-23-33-Roomify.png"
         ,
         link: "https://roomify-3c4bc.web.app/",
     },
-    {
-        id: 3,
-        color: "from-violet-300 to-purple-300",
-        title: "Chefs Table",
-        desc: "Chef's Table leverages the latest web technologies to deliver an exceptional culinary experience online. Our website is built with React.js, ensuring a dynamic and responsive user interface that adapts seamlessly across devices. We utilize Tailwind CSS for streamlined, efficient styling, allowing for a visually appealing and consistent design.",
-        img: 'https://i.ibb.co/s25DhcM/Screenshot-2024-07-04-at-17-24-47-Chefs-Table.png'
-        ,
-        link: "http://chefstable.surge.sh/",
-    },
+    
     {
         id: 4,
-        color: "from-purple-300 to-pink-300",
+        color: "from-yellow-300 to-green-300",
         title: "Stay Vista",
         desc: "uilt with React.js, our website ensures a responsive and intuitive experience across all devices. Tailwind CSS powers our elegant and modern design with firebase authentication.",
         img: 'https://i.ibb.co/m0237JX/Screenshot-2024-07-04-at-17-25-44-Details.png'

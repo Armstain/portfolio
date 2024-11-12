@@ -15,7 +15,7 @@ const AboutPage = () => {
         const handleScroll = () => {
             if (containerRef.current) {
                 const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
-                const isBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight - 10; // 10px threshold
+                const isBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight - 10;
                 setIsAtBottom(isBottom);
             }
         };
@@ -136,6 +136,9 @@ const AboutPage = () => {
                             <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                                 JavaScript
                             </div>
+                            <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                                TypeScript
+                            </div>
 
                             <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                                 React.js
@@ -232,11 +235,11 @@ const AboutPage = () => {
                                 <div className="w-1/3 ">
                                     {/* JOB TITLE */}
                                     <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                        Personal Project: ExpressLane
+                                        SSC-2016
                                     </div>
                                     {/* JOB DESC */}
                                     <div className="p-3 text-sm italic">
-                                        Developed a parcel delivery website using React, Node, Express, and MongoDB. Implemented responsive design with Tailwind CSS and Shadcn.
+                                        Hazi Kasim Uddin School
                                     </div>
                                     {/* JOB DATE */}
                                     {/* <div className="p-3 text-red-400 text-sm font-semibold">
@@ -274,11 +277,11 @@ const AboutPage = () => {
                                 <div className="w-1/3 ">
                                     {/* JOB TITLE */}
                                     <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                        Personal Project: Roomify
+                                        HSC-2018
                                     </div>
                                     {/* JOB DESC */}
                                     <div className="p-3 text-sm italic">
-                                        Created a room renting website using React and Tailwind CSS. Focused on building a user-friendly interface and ensuring mobile responsiveness.
+                                        Milesstone College
                                     </div>
                                     {/* JOB DATE */}
                                     {/* <div className="p-3 text-red-400 text-sm font-semibold">
@@ -296,11 +299,11 @@ const AboutPage = () => {
                                 <div className="w-1/3 ">
                                     {/* JOB TITLE */}
                                     <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                        Art & Craft Store
+                                        BA (Hons)(2019-)
                                     </div>
                                     {/* JOB DESC */}
                                     <div className="p-3 text-sm italic">
-                                        Created an Art & Craft store using React and Tailwind CSS. Focused on building a user-friendly interface and ensuring mobile responsiveness.
+                                        National College
                                     </div>
                                     {/* JOB DATE */}
                                     {/* <div className="p-3 text-red-400 text-sm font-semibold">
@@ -341,3 +344,5 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+
